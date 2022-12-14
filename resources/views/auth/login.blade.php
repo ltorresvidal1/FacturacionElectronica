@@ -10,8 +10,8 @@
         <div class="col-lg-6">
           
 
-             <div class="login-content">
-            <form  action="" method="POST">
+             <div class="login-content"> 
+                <form  action="{{route('login.store')}}" method="POST">
                 @csrf
                 <h1 class="text-center">Bienvenidos</h1>
                 <div class="text-muted text-center mb-4">

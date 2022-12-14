@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('perfiles', function (Blueprint $table) {
             $table->id();
-            $table->string('documento')->unique();
             $table->string('nombre');
-            $table->string('usuario')->unique();
-            $table->string('password');
-            $table->foreignId('perfile_id')->constrained();
-            $table->integer('idestado');
+            $table->integer('sa_administrador');     
+            $table->integer('idestado');            
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('perfiles');
     }
 };

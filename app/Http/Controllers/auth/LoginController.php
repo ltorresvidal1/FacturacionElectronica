@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\auth\StoreAuth;
 
 class LoginController extends Controller
 {
@@ -11,7 +12,7 @@ class LoginController extends Controller
     public function index() {
         return view('auth.login');
     }
-/*
+
     public function store(StoreAuth $request){
      
         $credentials = $request->only('usuario', 'password');
@@ -19,14 +20,14 @@ class LoginController extends Controller
       
 
         if (Auth::attempt($credentials)) {
-            notify()->success('Bienvenido');
+  //          notify()->success('Bienvenido');
             return redirect()->route('principal');
         }else{
-            notify()->error('Usuario o contreseña invalido');
+//            notify()->error('Usuario o contreseña invalido');
             return back();
         }
 }
-*/
+
 
 
 }
